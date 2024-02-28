@@ -28,6 +28,6 @@ export default {
 }
 </script>
 
-<style scoped src="@/components/Navbar/Navbar.css">
+<style scoped src="@/components/navbar/Navbar.css">
     
 </style>

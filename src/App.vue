@@ -1,16 +1,20 @@
 <template>
+  <div class="linksWrapper">
+    <RouterLink to="/" active-class="active" class="links">Hello</RouterLink>
+    <RouterLink to="/contact" active-class="active" class="links">Contact</RouterLink>
+  </div>
+  <RouterView/>
   <Navbar :on-selected="onSelected"/>
-  <!-- <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <Counter v-if="selectedIndex == 0"/>
   <Crypto v-if="selectedIndex == 1"/>
 </template>
 
 <script>
+import { RouterLink, RouterView } from 'vue-router'
+import Navbar from './components/navbar/Navbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
-import Navbar from './components/Navbar/Navbar.vue'
-import Counter from './components/Counter.vue';
-import Crypto from './components/Crypto.vue';
+import Counter from './components/Counter.vue'
+import Crypto from './components/Crypto.vue'
 
 export default {
   name: 'App',
@@ -18,7 +22,9 @@ export default {
     HelloWorld,
     Navbar,
     Counter,
-    Crypto
+    Crypto,
+    RouterLink,
+    RouterView
   },
   data() {
     return {
@@ -32,6 +38,21 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+.active {
+  color: green;
+}
+.linksWrapper {
+  background-color: aqua;
+  text-align: start;
+  padding: 20px;
+}
+.links {
+  padding-right: 20px;
+}
+</style>
 
 <style>
 #app {
